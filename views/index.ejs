@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Ledger Book</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+     <nav class="w-screen h-60px">
+          <div class="w-[90%] flex flex-row justify-between mx-[50px] py-[20px] items-center font-bold">
+               <div><h2 class="text-xl">KhataBook</h2></div>
+               <div class="flex flex-row">
+                    <a href="/"><p class="pr-[40px] text-lg">Home</p></a>
+                    <a href="/create"><p class="text-lg">Create New Hisaab</p></a>
+               </div>
+          </div>
+     </nav>
+     <div class="px-10 hisaabs">
+          <h1 class="capitalize text-2xl font-medium mb-10 mt-10">All Hisaab Kitaab</h1>
+
+          <% if(files.length > 0){ %>
+               <% files.forEach(function(file){ %>
+                    <div class="hisaab w-fit items-center py-3 px-5 mb-5 gap-20 bg-blue-500 flex justify-between rounded-md">
+                         <div class="flex gap-4 text-white items-center">
+                              <h3 class="text-2xl"><%= file %></h3>
+                              <a href="/hisaab/<%= file %>"><ion-icon class="w-10 h-10 text-white flex justify-center items-center" name="arrow-forward-circle-sharp"></ion-icon></a>
+                         </div>
+                         <div class="flex gap-3 items-center">
+                              <a href="/edit/<%= file %>"><ion-icon class="w-6 h-6 p-2 text-white flex justify-center items-center" name="pencil-outline"></ion-icon></a>
+                              <a href="/delete/<%= file %>"><ion-icon class="w-4 h-4 p-2 text-red-600 flex justify-center items-center bg-white rounded-full" name="trash-outline"></ion-icon></a>
+                         </div>
+                    </div>
+               <% }) %>
+          <% } else { %>
+               <h3 class="text-zinc-500">Currently nothing to show, create hisaabs to show something.</h3>
+          <% } %>
+     </div>
+</body>
+</html>

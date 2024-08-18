@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+     <main class="w-full h-screen bg-zinc-100">
+          <nav class="w-screen h-60px">
+               <div class="w-[90%] flex flex-row justify-between mx-[50px] py-[20px] items-center font-bold">
+                    <div><h2 class="text-xl">KhataBook</h2></div>
+                    <div class="flex flex-row">
+                         <a href="/"><p class="pr-[40px] text-lg">Home</p></a>
+                         <a href="/create"><p class="text-lg">Create New Hisaab</p></a>
+                    </div>
+               </div>
+          </nav>
+          <div class="px-10 hisaabs">
+               <h3 class="capitalize text-2xl font-medium mb-5 mt-10 tracking-tight">Your are Editing Hisaab of <span class="text-blue-500"><%= filename %></span> date</h3>
+               <p class="font-medium text-xl mb-10"><%= filedata %></p>
+               <a class="text-zinc-400" href="/edit/<%= filename %>">edit this hisaab</a>
+          </div>
+     </main>
+</body>
+</html>
